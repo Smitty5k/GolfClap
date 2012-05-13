@@ -1,0 +1,126 @@
+- model: courses.TeePositionColor
+  pk: 1
+  fields:
+    color: White
+- model: courses.TeePositionColor
+  pk: 2
+  fields:
+    color: Red
+- model: courses.TeePositionColor
+  pk: 3
+  fields:
+    color: Gold
+- model: courses.TeePositionColor
+  pk: 4
+  fields:
+    color: Blue
+#Tee Positions From Ponds White
+- model: courses.TeePosition
+  pk: 1
+  fields:
+    color: 1
+    distance: 397
+- model: courses.TeePosition
+  pk: 2
+  fields:
+    color: 1
+    distance: 359
+- model: courses.TeePosition
+  pk: 3
+  fields:
+    color: 1
+    distance: 163
+- model: courses.TeePosition
+  pk: 4
+  fields:
+    color: 1
+    distance: 364
+- model: courses.TeePosition
+  pk: 5
+  fields:
+    color: 1
+    distance: 501
+- model: courses.TeePosition
+  pk: 6
+  fields:
+    color: 1
+    distance: 378
+- model: courses.TeePosition
+  pk: 7
+  fields:
+    color: 1
+    distance: 477
+- model: courses.TeePosition
+  pk: 8
+  fields:
+    color: 1
+    distance: 152
+- model: courses.TeePosition
+  pk: 9
+  fields:
+    color: 1
+    distance: 389
+#Holes From Ponds White
+- model: courses.Hole
+  pk: 1
+  fields:
+    number: 1
+    par: 4
+    handicap: 3
+    teePositions: [1]
+- model: courses.Hole
+  pk: 2
+  fields:
+    number: 2
+    par: 4
+    handicap: 11
+    teePositions: [2]
+- model: courses.Hole
+  pk: 3
+  fields:
+    number: 3
+    par: 3
+    handicap: 17
+    teePositions: [3]
+- model: courses.Hole
+  pk: 4
+  fields:
+    number: 4
+    par: 4
+    handicap: 13
+    teePositions: [4]
+- model: courses.Hole
+  pk: 5
+  fields:
+    number: 5
+    par: 4
+    handicap: 5
+    teePositions: [5]
+- model: courses.Hole
+  pk: 6
+  fields:
+    number: 6
+    par: 4
+    handicap: 9
+    teePositions: [6]
+- model: courses.Hole
+  pk: 7
+  fields:
+    number: 7
+    par: 5
+    handicap: 5
+    teePositions: [7]
+- model: courses.Hole
+  pk: 8
+  fields:
+    number: 8
+    par: 3
+    handicap: 15
+    teePositions: [8]
+- model: courses.Hole
+  pk: 9
+  fields:
+    number: 9
+    par: 4
+    handicap: 1
+    teePositions: [9]

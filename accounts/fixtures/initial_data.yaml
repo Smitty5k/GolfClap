@@ -1,0 +1,11 @@
+- model: auth.user
+  pk: 1
+  fields:
+    first_name: Admin
+    last_name: User
+    username: gcadmin
+    email: Smitty5k@gmail.com
+    is_active: true
+    is_staff: true
+    is_superuser: true
+    password: sha1$ac80e$664d59e2e061dbbd5a7024f7507da13c5dec55b9
