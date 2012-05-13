@@ -1,0 +1,4 @@
+- model: leagues.League
+  pk: 1
+  fields:
+    name: 2012 GEMS Golfs League
