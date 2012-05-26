@@ -10,8 +10,7 @@ class League(models.Model):
 class Season(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
+    league = models.ForeignKey(League)
 
-
-class ScoreCard(models.Model):
-    week = models.DateField()
-    #team1
+    def __unicode__(self):
+        return str(self.league)+'-'+str(self.start_date)

@@ -1,0 +1,47 @@
+- model: schedule.TeeTime
+  pk: 1
+  fields:
+    week: 2012-05-14
+    time: 04:00:00
+    season: 1
+    home_team: 1
+    away_team: 2
+    course: 1
+
+- model: schedule.ScoreCard
+  pk: 1
+  fields:
+    tee_time: 1
+    course: 1
+
+- model: schedule.Score
+  pk: 1
+  fields:
+    score_card: 1
+    hole: 1
+    player: 1
+    score: 5
+
+- model: schedule.Score
+  pk: 2
+  fields:
+    score_card: 1
+    hole: 1
+    player: 2
+    score: 4
+
+- model: schedule.Score
+  pk: 3
+  fields:
+    score_card: 1
+    hole: 1
+    player: 3
+    score: 4
+
+- model: schedule.Score
+  pk: 4
+  fields:
+    score_card: 1
+    hole: 1
+    player: 4
+    score: 5

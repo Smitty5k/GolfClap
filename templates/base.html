@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/media/style/main.css" />
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>
+            {% block header %}{% endblock %}
+        </h1>
+    </div>
+    <div id="navigation">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/schedule/score">Scores</a></li>
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="#">Standings</a></li>
+        </ul>
+    </div>
+    <div id="navigationright">
+        <ul>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </div>
+    <div id="content-container">
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="aside">
+            <div id="messages">
+                {% block message %}
+                    {% if error_message %}<p><strong>Error{{ error_message }}</strong></p>{% endif %}
+                    {% if success_message %}<p><strong>{{ success_message }}</strong></p>{% endif %}
+                {% endblock message %}
+            </div>
+            {% block sidecontent %}{% endblock %}
+        </div>
+        <div id="footer">
+            {% block footer %}
+                <hr>
+                <p>Copyright © Golf Clap, 2012</p>
+            {% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

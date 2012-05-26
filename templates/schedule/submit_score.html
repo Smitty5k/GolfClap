@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Golf Clap{% endblock %}
+
+{% block header %}This Week{% endblock %}
+
+
+{% block content %}
+    <h2>{{  tee_time.course.name }}</h2>
+    <form action="/schedule/score/" method="post">{% csrf_token %}
+    <table id="table-design" border="1">
+        <thead>
+        <tr>
+            <th colspan="2"></th>
+            <th colspan="2">{{ tee_time.home_team }}</th>
+            <th colspan="2">{{ tee_time.away_team }}</th>
+        </tr>
+        <tr>
+            <th>Hole</th>
+            <th>Par</th>
+            <th>{{ form.player_one }}</th>
+            <th>{{ form.player_two }}</th>
+            <th>{{ form.player_three }}</th>
+            <th>{{ form.player_four }}</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ holes.0.number }}</td>
+                <td>{{ holes.0.par }}</td>
+                <td>{{ form.player_one_hole_one_score }}</td>
+                <td>{{ form.player_two_hole_one_score }}</td>
+                <td>{{ form.player_three_hole_one_score }}</td>
+                <td>{{ form.player_four_hole_one_score }}</td>
+            </tr>
+            <tr>
+                <td>{{ holes.1.number }}</td>
+                <td>{{ holes.1.par }}</td>
+                <td>{{ form.player_one_hole_two_score }}</td>
+                <td>{{ form.player_two_hole_two_score }}</td>
+                <td>{{ form.player_three_hole_two_score }}</td>
+                <td>{{ form.player_four_hole_two_score }}</td>
+            </tr>
+            <tr>
+                <td>{{ holes.2.number }}</td>
+                <td>{{ holes.2.par }}</td>
+                <td>{{ form.player_one_hole_three_score }}</td>
+                <td>{{ form.player_two_hole_three_score }}</td>
+                <td>{{ form.player_three_hole_three_score }}</td>
+                <td>{{ form.player_four_hole_three_score }}</td>
+            </tr>
+            <tr>
+                <td>{{ holes.3.number }}</td>
+                <td>{{ holes.3.par }}</td>
+                <td>{{ form.player_one_hole_four_score }}</td>
+                <td>{{ form.player_two_hole_four_score }}</td>
+                <td>{{ form.player_three_hole_four_score }}</td>
+                <td>{{ form.player_four_hole_four_score }}</td>
+            </tr>
+            <tr>
+                <td>{{ holes.4.number }}</td>
+                <td>{{ holes.4.par }}</td>
+                <td>{{ form.player_one_hole_five_score }}</td>
+                <td>{{ form.player_two_hole_five_score }}</td>
+                <td>{{ form.player_three_hole_five_score }}</td>
+                <td>{{ form.player_four_hole_five_score }}</td>
+            </tr>
+            <tr>
+                <td>{{ holes.5.number }}</td>
+                <td>{{ holes.5.par }}</td>
+                <td>{{ form.player_one_hole_six_score }}</td>
+                <td>{{ form.player_two_hole_six_score }}</td>
+                <td>{{ form.player_three_hole_six_score }}</td>
+                <td>{{ form.player_four_hole_six_score }}</td>
+            </tr>
+            <tr>
+                <td>{{ holes.6.number }}</td>
+                <td>{{ holes.6.par }}</td>
+                <td>{{ form.player_one_hole_seven_score }}</td>
+                <td>{{ form.player_two_hole_seven_score }}</td>
+                <td>{{ form.player_three_hole_seven_score }}</td>
+                <td>{{ form.player_four_hole_seven_score }}</td>
+            </tr>
+            <tr>
+                <td>{{ holes.7.number }}</td>
+                <td>{{ holes.7.par }}</td>
+                <td>{{ form.player_one_hole_eight_score }}</td>
+                <td>{{ form.player_two_hole_eight_score }}</td>
+                <td>{{ form.player_three_hole_eight_score }}</td>
+                <td>{{ form.player_four_hole_eight_score }}</td>
+            </tr>
+            <tr>
+                <td>{{ holes.8.number }}</td>
+                <td>{{ holes.8.par }}</td>
+                <td>{{ form.player_one_hole_nine_score }}</td>
+                <td>{{ form.player_two_hole_nine_score }}</td>
+                <td>{{ form.player_three_hole_nine_score }}</td>
+                <td>{{ form.player_four_hole_nine_score }}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+    <input class="submit_button" type="submit" value="Submit" />
+    </form>
+
+{% endblock %}
+
+{% block sidecontent %}
+    {{ form.non_field_errors }}
+    {{ form.player_one.errors }}
+    {{ form.player_two.errors }}
+    <b>{{ form.player_one_hole_one_score.error_messages }}</b>
+{% endblock %}

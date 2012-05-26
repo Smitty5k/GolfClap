@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Golf Clap{% endblock %}
+
+{% block header %}This Week{% endblock %}
+
+
+{% block content %}
+    <h2>{{  tee_time.course.name }}</h2>
+    <table id="table-design" border="1">
+        <thead>
+
+        <tr>
+            <th colspan="2"></th>
+            <th colspan="2">{{ tee_time.home_team }}</th>
+            <th colspan="2">{{ tee_time.away_team }}</th>
+        </tr>
+        <tr>
+            <th>Hole</th>
+            <th>Par</th>
+            <th>Player1</th>
+            <th>Player2</th>
+            <th>Player3</th>
+            <th>Player4</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for hole in holes %}
+        <tr>
+            <td>{{ hole.number }}</td>
+            <td>{{ hole.par }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block sidecontent %}
+    <p>Some great text.</p>
+{% endblock %}

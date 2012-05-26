@@ -2,3 +2,10 @@
   pk: 1
   fields:
     name: 2012 GEMS Golfs League
+
+- model: leagues.Season
+  pk: 1
+  fields:
+    start_date: 2012-04-30
+    end_date: 2012-08-31
+    league: 1

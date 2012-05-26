@@ -9,3 +9,97 @@
     is_staff: true
     is_superuser: true
     password: sha1$ac80e$664d59e2e061dbbd5a7024f7507da13c5dec55b9
+
+- model: auth.user
+  pk: 2
+  fields:
+    first_name: Ryan
+    last_name: Colwell
+    username: colwell
+    email: Smitty5k@gmail.com
+    is_active: true
+    is_staff: false
+    is_superuser: false
+    password: sha1$ac80e$664d59e2e061dbbd5a7024f7507da13c5dec55b9
+
+- model: auth.user
+  pk: 3
+  fields:
+    first_name: Justin
+    last_name: Smith
+    username: smijus
+    email: Smitty5k@gmail.com
+    is_active: true
+    is_staff: false
+    is_superuser: false
+    password: sha1$ac80e$664d59e2e061dbbd5a7024f7507da13c5dec55b9
+
+- model: auth.user
+  pk: 4
+  fields:
+    first_name: Andy
+    last_name: Novotny
+    username: novot
+    email: Smitty5k@gmail.com
+    is_active: true
+    is_staff: false
+    is_superuser: false
+    password: sha1$ac80e$664d59e2e061dbbd5a7024f7507da13c5dec55b9
+
+- model: auth.user
+  pk: 5
+  fields:
+    first_name: Bob
+    last_name: Laffarier
+    username: bobla
+    email: Smitty5k@gmail.com
+    is_active: true
+    is_staff: false
+    is_superuser: false
+    password: sha1$ac80e$664d59e2e061dbbd5a7024f7507da13c5dec55b9
+
+- model: accounts.Team
+  pk: 1
+  fields:
+    number: 1
+    name: Justin/Ryan
+    league: 1
+
+- model: accounts.Team
+  pk: 2
+  fields:
+    number: 2
+    name: Andy/Bob
+    league: 1
+
+- model: accounts.Player
+  pk: 1
+  fields:
+    name: Ryan
+    handicap: 17
+    team: 1
+    user: 2
+
+- model: accounts.Player
+  pk: 2
+  fields:
+    name: Justin
+    handicap: 15
+    team: 1
+    user: 3
+
+- model: accounts.Player
+  pk: 3
+  fields:
+    name: Andy
+    handicap: 6
+    team: 2
+    user: 4
+
+- model: accounts.Player
+  pk: 4
+  fields:
+    name: Bob
+    handicap: 7
+    team: 2
+    user: 5
