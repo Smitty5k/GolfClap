@@ -3,8 +3,8 @@ from django.db.models import signals
 from django.contrib.auth.models import User
 from leagues.models import League
 
-# Create your models here.
 class Team(models.Model):
+    """The Team model"""
     number = models.IntegerField()
     name = models.CharField(max_length=25)
     league = models.ForeignKey(League)
@@ -14,12 +14,15 @@ class Team(models.Model):
     class Meta:
         unique_together = (('number', 'name'),)
 
-# Create your models here.
+
 class UserProfile(models.Model):
+    """The User Profile model
+    This model extends the auth.user model
+    """
     user = models.OneToOneField('auth.User', related_name='profile')
     displayName = models.CharField(max_length=100)
 
-    def create_user_profile(sender, instance, created, **kwargs):
+    def create_user_profile(self, sender, instance, created, **kwargs):
         if created:
             UserProfile.objects.create(user=instance)
 
@@ -28,8 +31,10 @@ class UserProfile(models.Model):
 
     signals.post_save.connect(create_user_profile, sender=User)
 
-#Class For Representing a Player
 class Player(models.Model):
+    """The Player model
+    This model represents the user in the various leagues.
+    """
     name = models.CharField(max_length=100)
     handicap = models.IntegerField()
     team = models.ForeignKey(Team)

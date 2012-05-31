@@ -17,7 +17,7 @@ class TeeTime(models.Model):
 
 
 class ScoreCard(models.Model):
-    tee_time = models.ForeignKey(TeeTime)
+    tee_time = models.ForeignKey(TeeTime, unique=True)
     course = models.ForeignKey(Course)
 
     def __unicode__(self):
@@ -32,3 +32,12 @@ class Score(models.Model):
 
     def __unicode__(self):
         return str(self.score_card)+"-"+str(self.hole)+"-"+str(self.player)
+
+class TotalRoundScore(models.Model):
+    score_card = models.ForeignKey(ScoreCard)
+    course= models.ForeignKey(Course)
+    player = models.ForeignKey(Player)
+    total_score = models.IntegerField()
+
+    def __unicode__(self):
+        return str(self.score_card)+"-"+str(self.course)+"-"+str(self.player)

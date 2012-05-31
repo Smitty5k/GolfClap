@@ -8,13 +8,13 @@
   pk: 1
   fields:
     name: Ponds
-    par: 4
+    par: 36
     golf_course: 1
 - model: courses.Course
   pk: 2
   fields:
     name: Woods
-    par: 4
+    par: 36
     golf_course: 1
  #Tee Position Colors
 - model: courses.TeePositionColor

@@ -3,6 +3,7 @@
 {% block title %}Golf Clap{% endblock %}
 
 {% block header %}This Week{% endblock %}
+{% block include %}<script type="text/javascript" src="/media/javascript/ColumnSum.js"></script>{% endblock %}
 
 
 {% block content %}
@@ -97,6 +98,14 @@
                 <td>{{ form.player_three_hole_nine_score }}</td>
                 <td>{{ form.player_four_hole_nine_score }}</td>
             </tr>
+            <tr>
+                <td>Total</td>
+                <td>{{ form.course.par }}</td>
+                <td id="total-1">0</td>
+                <td id="total-2">0</td>
+                <td id="total-3">0</td>
+                <td id="total-4">0</td>
+            </tr>
         </tbody>
         <tfoot>
         </tfoot>
@@ -110,5 +119,5 @@
     {{ form.non_field_errors }}
     {{ form.player_one.errors }}
     {{ form.player_two.errors }}
-    <b>{{ form.player_one_hole_one_score.error_messages }}</b>
+    {{ form.player_one_hole_one_score.error_messages }}
 {% endblock %}
