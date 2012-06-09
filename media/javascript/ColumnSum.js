@@ -7,6 +7,12 @@ var MIN_SCORE_VALUE=0;
  * Start watching the table once the document loads.
  */
 $(document).ready(function() {
+    //Run it at the start
+    $("#total-1").html(sumOfColumns("table-design", 3, true));
+    $("#total-2").html(sumOfColumns("table-design", 4, true));
+    $("#total-3").html(sumOfColumns("table-design", 5, true));
+    $("#total-4").html(sumOfColumns("table-design", 6, true));
+
     $('#table-design').bind('input', function() {
         $("#total-1").html(sumOfColumns("table-design", 3, true));
         $("#total-2").html(sumOfColumns("table-design", 4, true));

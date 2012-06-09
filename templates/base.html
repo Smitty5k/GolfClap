@@ -24,7 +24,14 @@
     </div>
     <div id="navigationright">
         <ul>
-            <li><a href="#">Login</a></li>
+            <li>
+                {% if user.is_authenticated %}
+                    <a href="/logout">{{ user.first_name }}, Log Out</a>
+                {% else %}
+                    <a href="/login"> Login</a>
+                {% endif %}
+            </li>
+
         </ul>
     </div>
     <div id="content-container">
@@ -45,6 +52,7 @@
                 <hr>
                 <p>Copyright © Golf Clap, 2012</p>
             {% endblock %}
+            {% csrf_token %}
         </div>
     </div>
 </div>

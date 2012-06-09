@@ -9,7 +9,7 @@ class Team(models.Model):
     name = models.CharField(max_length=25)
     league = models.ForeignKey(League)
     def __unicode__(self):
-        return str(self.number)+'-'+self.name
+        return "Team "+str(self.number)+'-'+self.name
 
     class Meta:
         unique_together = (('number', 'name'),)
@@ -22,7 +22,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField('auth.User', related_name='profile')
     displayName = models.CharField(max_length=100)
 
-    def create_user_profile(self, sender, instance, created, **kwargs):
+    def create_user_profile(sender, instance, created, **kwargs):
         if created:
             UserProfile.objects.create(user=instance)
 

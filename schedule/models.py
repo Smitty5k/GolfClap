@@ -25,19 +25,20 @@ class ScoreCard(models.Model):
 
 
 class Score(models.Model):
+    tee_time = models.ForeignKey(TeeTime)
     score_card = models.ForeignKey(ScoreCard)
     hole = models.ForeignKey(Hole)
     player = models.ForeignKey(Player)
-    score = models.IntegerField()
+    score = models.IntegerField(default=0)
 
     def __unicode__(self):
         return str(self.score_card)+"-"+str(self.hole)+"-"+str(self.player)
 
 class TotalRoundScore(models.Model):
+    tee_time = models.ForeignKey(TeeTime)
     score_card = models.ForeignKey(ScoreCard)
-    course= models.ForeignKey(Course)
     player = models.ForeignKey(Player)
-    total_score = models.IntegerField()
+    total_score = models.IntegerField(default=0)
 
     def __unicode__(self):
-        return str(self.score_card)+"-"+str(self.course)+"-"+str(self.player)
+        return str(self.score_card)+"-"+str(self.player)

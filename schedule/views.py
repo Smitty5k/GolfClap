@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response, HttpResponseRedirect, RequestContext
+from django.shortcuts import render_to_response, RequestContext
 from schedule.models import TeeTime
 from courses.models import Hole
 from schedule.forms import ScoreForm
@@ -8,7 +8,7 @@ def index(request):
     latest_tee_time_list = TeeTime.objects.all()
     tee_time = latest_tee_time_list[0]
     holes = Hole.objects.filter(course=tee_time.course)
-    return render_to_response('schedule/index.html', {'tee_time' : tee_time, 'holes':holes})
+    return render_to_response('schedule/index.html', {'tee_time' : tee_time, 'holes':holes, 'user': request.user,})
 
 def submit_score(request):
     latest_tee_time_list = TeeTime.objects.all()
@@ -21,7 +21,11 @@ def submit_score(request):
         form = ScoreForm(data=request.POST, tee_time=tee_time, course=tee_time.course, holes=holes)
         if form.is_valid(): # All validation rules pass
             form.save()
-            return HttpResponseRedirect('/schedule/') # Redirect after POST
+            return render_to_response('schedule/submit_score.html', {
+                'form': form, 'tee_time':tee_time, 'holes':holes,
+                'success_message': "Scores Added Successfully!",
+                'user': request.user,
+                }, context_instance=RequestContext(request),)
         else:
             error_messages = form.errors
             form = ScoreForm(tee_time=tee_time, course=tee_time.course, holes=holes)
@@ -34,6 +38,7 @@ def submit_score(request):
             return render_to_response('schedule/submit_score.html', {
                 'form': form, 'tee_time':tee_time, 'holes':holes,
                 'error_message': error_messages,
+                'user': request.user,
                 }, context_instance=RequestContext(request),)
     else:
         #create the form
@@ -46,5 +51,5 @@ def submit_score(request):
         form.fields['player_four'].queryset=away_players
 
     return render_to_response('schedule/submit_score.html', {
-        'form': form, 'tee_time':tee_time, 'holes':holes,
+        'form': form, 'tee_time':tee_time, 'holes':holes, 'user': request.user,
         }, context_instance=RequestContext(request),)

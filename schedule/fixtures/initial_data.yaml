@@ -17,6 +17,7 @@
 - model: schedule.Score
   pk: 1
   fields:
+    tee_time: 1
     score_card: 1
     hole: 1
     player: 1
@@ -25,6 +26,7 @@
 - model: schedule.Score
   pk: 2
   fields:
+    tee_time: 1
     score_card: 1
     hole: 1
     player: 2
@@ -33,6 +35,7 @@
 - model: schedule.Score
   pk: 3
   fields:
+    tee_time: 1
     score_card: 1
     hole: 1
     player: 3
@@ -41,6 +44,7 @@
 - model: schedule.Score
   pk: 4
   fields:
+    tee_time: 1
     score_card: 1
     hole: 1
     player: 4
